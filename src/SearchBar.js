@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
             name="search"
             onChange={ (e) => handleChange(e) }
             id="input-search"
+            placeholder="Faça sua pesquisa!"
             value={ value }
           />
         </label>
