@@ -37,7 +37,7 @@ class App extends React.Component {
                       handleChange={ this.handleChange }
                       value={ search }
                     />
-                    <Link data-testid="shopping-cart-button" to="/carrinho"><img src="https://media.gettyimages.com/vectors/full-cart-shopping-and-retail-thin-line-icon-set-vector-id1084146520?s=612x612" alt="Carrinho de Compras" width="80px" /></Link>
+                    <Link data-testid="shopping-cart-button" to="/carrinho"><img src="https://w7.pngwing.com/pngs/15/271/png-transparent-computer-icons-online-shopping-shopping-cart-service-shopping-cart-icon-text-service-retail-thumbnail.png" alt="Carrinho de Compras" width="80px" /></Link>
                   </div>
 
                   <p data-testid="home-initial-message">
