@@ -1,4 +1,5 @@
 import React from 'react';
+import TypeProps from 'prop-types';
 
 class SearchBar extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class SearchBar extends React.Component {
           <input
             type="text"
             name="search"
-            onChange={ handleChange }
+            onChange={ (e) => handleChange(e) }
             id="input-search"
             value={ value }
           />
@@ -18,5 +19,10 @@ class SearchBar extends React.Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  handleChange: TypeProps.func.isRequired,
+  value: TypeProps.string.isRequired,
+};
 
 export default SearchBar;
