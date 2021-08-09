@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import SearchBar from './SearchBar';
-import Carrinho from './Carrinho';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import SearchBar from './Componentes/SearchBar';
+import Carrinho from './Componentes/Carrinho';
+import LinkParaCarrinho from './Componentes/LinkParaCarrinh';
 
 class App extends React.Component {
   constructor() {
@@ -37,13 +38,13 @@ class App extends React.Component {
                       handleChange={ this.handleChange }
                       value={ search }
                     />
-                    <Link data-testid="shopping-cart-button" to="/carrinho"><img src="https://media.gettyimages.com/vectors/full-cart-shopping-and-retail-thin-line-icon-set-vector-id1084146520?s=612x612" alt="Carrinho de Compras" width="80px" /></Link>
+                    <LinkParaCarrinho />
                   </div>
-
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.
                   </p>
-                </div>) }
+                </div>
+              ) }
             />
             <Route exact path="*" render={ () => (<p>Not Found</p>) } />
           </Switch>
