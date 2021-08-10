@@ -3,7 +3,6 @@
   background-color: #0d1117;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   text-align: center;
 }
 
@@ -11,7 +10,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  width: 98vw;
 }
 
 .search-cart input, .search-cart form {

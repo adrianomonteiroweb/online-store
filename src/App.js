@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Categories from './Categories';
 import { getCategories } from './services/api';
-import SearchBar from './Componentes/SearchBar';
-import Carrinho from './Componentes/Carrinho';
-import LinkParaCarrinho from './Componentes/LinkParaCarrinh';
+import { SearchBar, Carrinho, LinkParaCarrinho,
+  CategoriesContainer } from './Componentes/index';
 
 class App extends React.Component {
   constructor() {
@@ -52,13 +50,7 @@ class App extends React.Component {
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.
                   </p>
-                  <aside className="aside">
-                    <p>Categorias:</p>
-                    {categories
-                      .map((obj) => (
-                        <Categories key={ obj.id } category={ obj.name } />
-                      ))}
-                  </aside>
+                  <CategoriesContainer categories={ categories } />
                 </div>
               ) }
             />
