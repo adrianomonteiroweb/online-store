@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Categories from './Categories';
-import SearchBar from './SearchBar';
 import { getCategories } from './services/api';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchBar from './Componentes/SearchBar';
