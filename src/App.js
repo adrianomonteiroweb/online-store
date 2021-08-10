@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   async fetchQueryCategory(categoryID, query) {
-    const promise = await getProductsFromCategoryAndQuery(categoryID, query);w
+    const promise = await getProductsFromCategoryAndQuery(categoryID, query);
     this.setState({ categorySelected: promise.results });
   }
 
