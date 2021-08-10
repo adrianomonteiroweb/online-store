@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.aside {
+  border: 1px solid black;
+  margin-left: 10px;
+  padding: 20px;
+  width: 35%;
+}
+
+[data-testid="category"] {
+  display: flex;
+  flex-direction: column;
+}
