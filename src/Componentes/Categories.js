@@ -3,10 +3,16 @@ import React from 'react';
 
 class Categories extends React.Component {
   render() {
-    const { category } = this.props;
+    const { category, handleClick, id } = this.props;
     return (
       <label htmlFor="category">
-        <input data-testid="category" type="radio" />
+        <input
+          onClick={ (e) => handleClick(e) }
+          name="category"
+          type="radio"
+          id={ id }
+          value={ category }
+        />
         { category }
       </label>
     );

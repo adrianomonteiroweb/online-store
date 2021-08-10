@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.row {
+  display: flex;
+  width: 98%;
+  justify-content: space-between;
+}
+
 .search-cart {
   align-items: center;
   display: flex;
