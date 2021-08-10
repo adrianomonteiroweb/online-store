@@ -5,15 +5,18 @@ import './CategoriesContainer.css';
 
 class CategoriesContainer extends React.Component {
   render() {
-    const time = 3000;
-    const { categories } = this.props;
-    setTimeout(() => console.log(categories), time);
+    const { categories, handleClick } = this.props;
     return (
       <aside className="aside">
         <p>Categorias:</p>
         {categories
           .map((obj) => (
-            <Categories key={ obj.id } category={ obj.name } />
+            <Categories
+              key={ obj.id }
+              id={ obj.id }
+              handleClick={ handleClick }
+              category={ obj.name }
+            />
           ))}
       </aside>
     );
@@ -22,6 +25,7 @@ class CategoriesContainer extends React.Component {
 
 CategoriesContainer.propTypes = {
   categories: propTypes.arrayOf(propTypes.string).isRequired,
+  handleClick: propTypes.func.isRequired,
 };
 
 export default CategoriesContainer;
