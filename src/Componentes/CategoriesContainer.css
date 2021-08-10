@@ -6,7 +6,7 @@
   width: 25%;
 }
 
-[data-testid="category"] {
+[ data-testid = 'category' ] {
   display: flex;
   flex-direction: column;
 }
