@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Categories from './Categories';
 import { getCategories } from './services/api';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SearchBar from './Componentes/SearchBar';
 import Carrinho from './Componentes/Carrinho';
 import LinkParaCarrinho from './Componentes/LinkParaCarrinh';
@@ -54,7 +54,10 @@ class App extends React.Component {
                   </p>
                   <aside className="aside">
                     <p>Categorias:</p>
-                    {categories.map((obj) => <Categories key={ obj.id } category={ obj.name } />)}
+                    {categories
+                      .map((obj) => (
+                        <Categories key={ obj.id } category={ obj.name } />
+                      ))}
                   </aside>
                 </div>
               ) }
