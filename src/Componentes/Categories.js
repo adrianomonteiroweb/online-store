@@ -8,6 +8,7 @@ class Categories extends React.Component {
       <label htmlFor="category">
         <input
           onClick={ (e) => handleClick(e) }
+          data-testid="category"
           name="category"
           type="radio"
           id={ id }
