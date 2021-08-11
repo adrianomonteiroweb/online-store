@@ -7,7 +7,7 @@ class Carrinho extends React.Component {
     this.timeout = this.timeout.bind(this);
     this.state = {
       listaDeProdutos: [],
-      loading: true,
+      loading: false,
     };
   }
 
@@ -26,7 +26,7 @@ class Carrinho extends React.Component {
 
   render() {
     const { listaDeProdutos, loading } = this.state;
-    this.timeout();
+    // this.timeout();
     if (loading) return <Loading />;
     if (listaDeProdutos.length === 0) {
       return (
