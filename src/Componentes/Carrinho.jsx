@@ -16,6 +16,7 @@ class Carrinho extends React.Component {
 
   //   });
   // }
+
   timeout = () => {
     const time = 2000;
     setTimeout(() => this.setState(
