@@ -5,6 +5,7 @@ import { getCategories, getProductsFromCategoryAndQuery } from './services/api';
 import { SearchBar, Carrinho, LinkParaCarrinho,
   CategoriesContainer } from './Componentes/index';
 import ListProducts from './Componentes/ListProducts';
+import ProductDetails from './Componentes/ProductDetails';
 
 class App extends React.Component {
   constructor() {
@@ -55,6 +56,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path="/carrinho" component={ Carrinho } />
+            <Route path="/:name/details" component={ ProductDetails } />
             <Route
               exact
               path="/"

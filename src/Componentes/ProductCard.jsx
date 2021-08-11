@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 class ProductCard extends React.Component {
@@ -21,6 +22,9 @@ class ProductCard extends React.Component {
           {price}
         </h5>
         <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
+        <Link data-testid="product-detail-link" to={ `/${title}/details` }>
+          Ver detalhes
+        </Link>
       </div>
     );
   }
