@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
 class ProductDetails extends React.Component {
@@ -25,7 +26,7 @@ class ProductDetails extends React.Component {
 
   render() {
     const { productTest } = this.state;
-    const { title, thumbnail, price, domain_id } = productTest;
+    const { title, thumbnail, price, domainId } = productTest;
 
     return (
       <div>
@@ -48,7 +49,7 @@ class ProductDetails extends React.Component {
 
         <div>
           <h4 className="especDetails">
-            { domain_id }
+            { domainId }
 
           </h4>
         </div>
@@ -56,5 +57,13 @@ class ProductDetails extends React.Component {
     );
   }
 }
+
+ProductDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      name: PropTypes.string,
+    }),
+  }),
+}.isRequired;
 
 export default ProductDetails;
