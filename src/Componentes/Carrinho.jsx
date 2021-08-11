@@ -19,9 +19,18 @@ class Carrinho extends React.Component {
       });
   }
 
+  remover = (id) => {
+    const { listaDeProdutos } = this.state;
+    const resultadoBusca = listaDeProdutos.find((elemento) => elemento.id === id);
+    const indexARetirar = listaDeProdutos
+      .indexOf(resultadoBusca);
+    listaDeProdutos.splice(indexARetirar, 1);
+    this.setState({ listaDeProdutos });
+  }
+
   render() {
     const { listaDeProdutos, loading } = this.state;
-    console.log(listaDeProdutos);
+
     if (loading) return <Loading />;
     if (listaDeProdutos.length === 0) {
       return (
@@ -30,7 +39,17 @@ class Carrinho extends React.Component {
     }
     return (
       <div>
+
         <ProductCard product={ listaDeProdutos[0] } />
+
+        {listaDeProdutos.map((produto) => (
+          <div key={ produto.id } className="containerItem">
+            <ProductCard
+              key={ produto.id }
+              product={ produto }
+              funcRemover={ this.remover }
+            />
+          </div>))}
       </div>
     );
   }
