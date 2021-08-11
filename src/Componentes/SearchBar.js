@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       <form>
         <label htmlFor="input-search">
           <input
+            data-testid="query-input"
             type="text"
             name="search"
             onChange={ (e) => handleChange(e) }
