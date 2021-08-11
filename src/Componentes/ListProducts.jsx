@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProductCard from './ProductCard';
 import './ListProducts.css';
 
@@ -19,8 +20,14 @@ class ListProducts extends React.Component {
   }
 }
 
-// ListProducts.propTypes = {
-//   ProductCard: propTypes.arrayOf(propTypes.).isRequired,
-// };
+ListProducts.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      thumbnail: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default ListProducts;
