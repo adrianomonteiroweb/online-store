@@ -8,8 +8,8 @@
 
 .row {
   display: flex;
-  width: 98%;
   justify-content: space-between;
+  width: 98%;
 }
 
 .search-cart {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ProductCard.css';
 
 class ProductCard extends React.Component {
   render() {
@@ -15,10 +16,10 @@ class ProductCard extends React.Component {
           Nome Do Produto:
           {title}
         </h4>
-        <h>
+        <h5>
           Preço do Produto
           {price}
-        </h>
+        </h5>
         <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
       </div>
     );
@@ -26,9 +27,11 @@ class ProductCard extends React.Component {
 }
 
 ProductCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  imagePath: PropTypes.string.isRequired,
+  product: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProductCard;

@@ -8,9 +8,9 @@
 }
 
 label {
+  color: white;
   display: flex;
   margin-bottom: 9px;
-  color: white;
 }
 
 input {

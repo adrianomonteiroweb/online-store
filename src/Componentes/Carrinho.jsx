@@ -26,7 +26,7 @@ class Carrinho extends React.Component {
 
   render() {
     const { listaDeProdutos, loading } = this.state;
-    this.timeout(); //função assincrona falsa, aqui!
+    this.timeout();
     if (loading) return <Loading />;
     if (listaDeProdutos.length === 0) {
       return (
