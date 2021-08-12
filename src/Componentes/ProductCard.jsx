@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ProductCard.css';
 // import BotoesDosProdutos from './BotoesDosProdutos';
 import FreteComponent from './FreteComponent';
@@ -92,7 +92,9 @@ class ProductCard extends React.Component {
         >
           Adicionar ao carrinho
         </button>
-
+        <Link data-testid="product-detail-link" to={ `/${title}/details` }>
+          Ver detalhes
+        </Link>
       </div>
     );
   }
