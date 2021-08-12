@@ -1,9 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
-import BotoesDosProdutos from './BotoesDosProdutos';
+// import BotoesDosProdutos from './BotoesDosProdutos';
 import FreteComponent from './FreteComponent';
 
 class ProductCard extends React.Component {
@@ -52,14 +52,21 @@ class ProductCard extends React.Component {
   }
 
   render() {
-
     // console.log(<Route path="" />);
     // const { product: { title, price, thumbnail } } = this.props;
-    const { product: { title, price, thumbnail, id }, product } = this.props;
+    // const { product: { title, price, thumbnail, id }, product } = this.props;
 
-    const { NumberOfItems } = this.state;
-    const { product: { title, price, thumbnail, id, shipping: { free_shipping: frete } },
-      funcRemover } = this.props;
+    // const { NumberOfItems } = this.state;
+    const {
+      product: {
+        title,
+        price,
+        thumbnail,
+        id,
+        shipping: {
+          free_shipping: frete,
+        } }, product,
+    } = this.props;
 
     return (
       <div
@@ -87,16 +94,13 @@ class ProductCard extends React.Component {
           Adicionar ao carrinho
         </button>
 
-        <Link data-testid="product-detail-link" to={ `/${title}/details` }>
-          Ver detalhes
-        </Link>
       </div>
     );
   }
 }
 
 ProductCard.propTypes = {
-  funcRemover: PropTypes.func,
+  // funcRemover: PropTypes.func,
   product: PropTypes.shape({
     title: PropTypes.string,
     price: PropTypes.number,
@@ -109,8 +113,8 @@ ProductCard.propTypes = {
   }).isRequired,
 };
 
-ProductCard.defaultProps = {
-  funcRemover: () => {},
-};
+// ProductCard.defaultProps = {
+//   funcRemover: () => {},
+// };
 
 export default ProductCard;
