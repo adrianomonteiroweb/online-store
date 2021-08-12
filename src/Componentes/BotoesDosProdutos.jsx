@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 class BotoesDosProdutos extends React.Component {
   render() {
     const { NumberOfItems, onClickIncress, onClickDecress, funcRemover, id } = this.props;
+    // console.log(funcRemover('MLB46839461389'));
+
     return (
       <div className="containerButtons">
         <button type="button" onClick={ () => funcRemover(id) }>X</button>
@@ -15,7 +17,13 @@ class BotoesDosProdutos extends React.Component {
           +
 
         </button>
-        <div>{NumberOfItems}</div>
+        <div
+          data-testid="shopping-cart-product-quantity"
+          value={ NumberOfItems }
+        >
+          {NumberOfItems}
+
+        </div>
         <button
           data-testid="product-decrease-quantity"
           type="button"

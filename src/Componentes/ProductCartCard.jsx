@@ -1,14 +1,14 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
+import BotoesDosProdutos from './BotoesDosProdutos';
 
-class ProductCard extends React.Component {
+class ProductCartCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       NumberOfItems: 1,
-      cartEntries: true,
     };
   }
 
@@ -24,34 +24,10 @@ class ProductCard extends React.Component {
     }
   }
 
-  AddToCart = (product) => {
-    const { title, price, thumbnail, id } = product;
-    const { cartEntries } = this.state;
-    const item = {
-      title,
-      price,
-      thumbnail,
-      id,
-    };
-    if (localStorage.getItem('items') === null && cartEntries === true) {
-      localStorage.setItem('items', JSON.stringify([item]));
-      this.setState({ cartEntries: false });
-    } else if (cartEntries === true) {
-      localStorage.setItem(
-        'items',
-        JSON.stringify([
-          ...JSON.parse(localStorage.getItem('items')),
-          item,
-        ]),
-      );
-      this.setState({ cartEntries: false });
-    }
-  }
-
   render() {
+    const { NumberOfItems } = this.state;
     // console.log(<Route path="" />);
-    // const { product: { title, price, thumbnail } } = this.props;
-    const { product: { title, price, thumbnail, id }, product } = this.props;
+    const { product: { title, price, thumbnail, id }, funcRemover } = this.props;
 
     return (
       <div
@@ -69,25 +45,23 @@ class ProductCard extends React.Component {
           {price}
         </h5>
         <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
-        <button
-          data-testid="product-add-to-cart"
-          type="submit"
-          id={ id }
-          onClick={ () => this.AddToCart(product) }
-        >
-          Adicionar ao carrinho
-        </button>
-
         <Link data-testid="product-detail-link" to={ `/${title}/details` }>
           Ver detalhes
         </Link>
+        <BotoesDosProdutos
+          id={ id }
+          funcRemover={ funcRemover }
+          onClickIncress={ this.onClickIncress }
+          onClickDecress={ this.onClickDecress }
+          NumberOfItems={ NumberOfItems }
+        />
       </div>
     );
   }
 }
 
-ProductCard.propTypes = {
-  // funcRemover: PropTypes.func.isRequired,
+ProductCartCard.propTypes = {
+  funcRemover: PropTypes.func.isRequired,
   product: PropTypes.shape({
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
@@ -96,4 +70,4 @@ ProductCard.propTypes = {
   }).isRequired,
 };
 
-export default ProductCard;
+export default ProductCartCard;

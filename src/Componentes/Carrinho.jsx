@@ -1,23 +1,31 @@
 import React from 'react';
-import Loading from './Loading';
-import { getProductsFromCategoryAndQuery } from '../services/api';
-import ProductCard from './ProductCard';
+// import Loading from './Loading';
+// import { getProductsFromCategoryAndQuery } from '../services/api';
+import ProductCartCard from './ProductCartCard';
 
 class Carrinho extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       listaDeProdutos: [],
-      loading: false,
+      loading: true,
     };
   }
 
   componentDidMount() {
-    getProductsFromCategoryAndQuery('', 'computador')
-      .then((data) => {
-        this.setState({ listaDeProdutos: [...data.results] });
-      });
+    this.getStorageItems();
   }
+
+  getStorageItems = () => {
+    // const { listaDeProdutos } = this.state;
+    const localStorageItems = JSON.parse(localStorage.getItem('items'));
+    if (localStorageItems !== null) {
+      this.setState({ listaDeProdutos: [...localStorageItems] });
+      this.setState({ loading: false });
+    } else {
+      this.setState({ loading: true });
+    }
+  };
 
   remover = (id) => {
     const { listaDeProdutos } = this.state;
@@ -31,20 +39,18 @@ class Carrinho extends React.Component {
   render() {
     const { listaDeProdutos, loading } = this.state;
 
-    if (loading) return <Loading />;
-    if (listaDeProdutos.length === 0) {
+    // if (loading) return <Loading />;
+
+    if (loading) {
       return (
         <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
       );
     }
     return (
       <div>
-
-        <ProductCard product={ listaDeProdutos[0] } />
-
         {listaDeProdutos.map((produto) => (
           <div key={ produto.id } className="containerItem">
-            <ProductCard
+            <ProductCartCard
               key={ produto.id }
               product={ produto }
               funcRemover={ this.remover }

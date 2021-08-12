@@ -4,6 +4,14 @@ import ProductCard from './ProductCard';
 import './ListProducts.css';
 
 class ListProducts extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      // listProduct: [],
+    };
+    // this.AddToCart = this.AddToCart.bind(this);
+  }
+
   render() {
     const { products } = this.props;
     return (
@@ -12,7 +20,8 @@ class ListProducts extends React.Component {
         <section className="listOfProducs">
           {products
             .map((obj) => (
-              <ProductCard key={ obj.id } product={ obj } />
+              <ProductCard key={ obj.id } product={ obj } AddToCart={ this.AddToCart } />
+              // <ProductCard key={ obj.id } product={ obj } />
             ))}
         </section>
       </div>
