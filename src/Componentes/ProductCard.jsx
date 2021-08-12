@@ -3,6 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
+import BotoesDosProdutos from './BotoesDosProdutos';
+import FreteComponent from './FreteComponent';
+
 class ProductCard extends React.Component {
   constructor(props) {
     super(props);
@@ -49,9 +52,14 @@ class ProductCard extends React.Component {
   }
 
   render() {
+
     // console.log(<Route path="" />);
     // const { product: { title, price, thumbnail } } = this.props;
     const { product: { title, price, thumbnail, id }, product } = this.props;
+
+    const { NumberOfItems } = this.state;
+    const { product: { title, price, thumbnail, id, shipping: { free_shipping: frete } },
+      funcRemover } = this.props;
 
     return (
       <div
@@ -68,6 +76,7 @@ class ProductCard extends React.Component {
           Preço do Produto
           {price}
         </h5>
+        <FreteComponent frete={ frete } />
         <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
         <button
           data-testid="product-add-to-cart"
@@ -87,13 +96,21 @@ class ProductCard extends React.Component {
 }
 
 ProductCard.propTypes = {
-  // funcRemover: PropTypes.func.isRequired,
+  funcRemover: PropTypes.func,
   product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    id: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    id: PropTypes.string,
+    thumbnail: PropTypes.string,
+    frete: PropTypes.string,
+    shipping: PropTypes.shape({
+      free_shipping: PropTypes.bool,
+    }),
   }).isRequired,
+};
+
+ProductCard.defaultProps = {
+  funcRemover: () => {},
 };
 
 export default ProductCard;
