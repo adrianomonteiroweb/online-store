@@ -75,7 +75,6 @@ class App extends React.Component {
                       }
                     >
                       Search
-
                     </button>
                     <LinkParaCarrinho />
                   </div>
