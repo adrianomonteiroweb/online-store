@@ -9,7 +9,9 @@ class ListProducts extends React.Component {
     return (
       <div>
         <p>Produtos</p>
-        <section className="listOfProducs">
+        <section
+          className="listOfProducs"
+        >
           {products
             .map((obj) => (
               <ProductCard key={ obj.id } product={ obj } />

@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import FreteComponent from './FreteComponent';
 
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productTest: '',
+      productTest: { shipping: { free_shipping: true } },
     };
   }
 
@@ -26,8 +27,8 @@ class ProductDetails extends React.Component {
 
   render() {
     const { productTest } = this.state;
-    const { title, thumbnail, price, domainId } = productTest;
-
+    const { title, thumbnail, price, domainId, shipping:
+      { free_shipping: frete } } = productTest;
     return (
       <div>
         <Link to="/carrinho"> carrinho </Link>
@@ -45,6 +46,7 @@ class ProductDetails extends React.Component {
           {price}
 
         </h4>
+        <FreteComponent frete={ frete } />
         <img alt="ImageProduct" className="imageDetails" src={ thumbnail } />
 
         <div>
