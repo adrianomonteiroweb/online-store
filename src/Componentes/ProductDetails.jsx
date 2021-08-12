@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import FreteComponent from './FreteComponent';
+import Valuation from './valuation';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class ProductDetails extends React.Component {
 
           </h4>
         </div>
+        <Valuation />
       </div>
     );
   }

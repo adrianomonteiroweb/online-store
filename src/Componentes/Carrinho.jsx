@@ -30,6 +30,7 @@ class Carrinho extends React.Component {
 
   render() {
     const { listaDeProdutos, loading } = this.state;
+
     if (loading) return <Loading />;
     if (listaDeProdutos.length === 0) {
       return (
@@ -38,6 +39,9 @@ class Carrinho extends React.Component {
     }
     return (
       <div>
+
+        <ProductCard product={ listaDeProdutos[0] } />
+
         {listaDeProdutos.map((produto) => (
           <div key={ produto.id } className="containerItem">
             <ProductCard
