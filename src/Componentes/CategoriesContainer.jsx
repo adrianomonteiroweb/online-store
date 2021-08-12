@@ -24,7 +24,10 @@ class CategoriesContainer extends React.Component {
 }
 
 CategoriesContainer.propTypes = {
-  categories: propTypes.arrayOf(propTypes.string).isRequired,
+  categories: propTypes.arrayOf(propTypes.shape({
+    id: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+  })).isRequired,
   handleClick: propTypes.func.isRequired,
 };
 
