@@ -92,6 +92,7 @@ class ProductCard extends React.Component {
         >
           Adicionar ao carrinho
         </button>
+
         <Link
           data-testid="product-detail-link"
           to={ { pathname: `/${id}/details`, state: { ...product } } }
