@@ -12,6 +12,7 @@ export async function getProductsFromCategoryAndQuery(categoryId, query) {
   if (!categoryId && query) response = await fetch(`${ENDPOINT_TERMO}${query}`);
   if (categoryId && !query) response = await fetch(`${ENDPOINT_ID}${categoryId}`);
   response = await fetch(`${ENDPOINT_ID}${categoryId}&q=${query}`);
+  // src: Mateus Duarte Pull request project online front-end store
 
   const jsonResponse = response.json();
 
