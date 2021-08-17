@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FreteComponent, Valuation } from './index';
+import { FreteComponent, Valuetion } from './index';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class ProductDetails extends React.Component {
 
           </h4>
         </div>
-        <Valuation />
+        <Valuetion />
       </div>
     );
   }

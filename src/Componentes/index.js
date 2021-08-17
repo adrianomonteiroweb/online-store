@@ -9,4 +9,4 @@ export { default as FreteComponent } from './FreteComponent';
 export { default as ListProducts } from './ListProducts';
 export { default as ProductCard } from './ProductCard';
 export { default as ProductCartCard } from './ProductCartCard';
-export { default as Valuation } from './Valuation';
+export { default as Valuetion } from './Valuetion';
