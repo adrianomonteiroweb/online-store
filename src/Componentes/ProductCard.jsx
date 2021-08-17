@@ -27,13 +27,14 @@ class ProductCard extends React.Component {
   }
 
   AddToCart = (product) => {
-    const { title, price, thumbnail, id } = product;
+    const { title, price, thumbnail, id, available_quantity: quantidadeMax } = product;
     const { cartEntries } = this.state;
     const item = {
       title,
       price,
       thumbnail,
       id,
+      quantidadeMax,
     };
     if (localStorage.getItem('items') === null && cartEntries === true) {
       localStorage.setItem('items', JSON.stringify([item]));

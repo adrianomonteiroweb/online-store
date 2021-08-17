@@ -13,7 +13,12 @@ class ProductCartCard extends React.Component {
   }
 
   onClickIncress = () => {
-    this.setState((previusState) => ({ NumberOfItems: previusState.NumberOfItems + 1 }));
+    const { product: { quantidadeMax } } = this.props;
+    const { NumberOfItems } = this.state;
+    if (NumberOfItems < quantidadeMax) {
+      this.setState((previusState) => (
+        { NumberOfItems: previusState.NumberOfItems + 1 }));
+    }
   }
 
   onClickDecress = () => {
@@ -26,7 +31,6 @@ class ProductCartCard extends React.Component {
 
   render() {
     const { NumberOfItems } = this.state;
-    // console.log(<Route path="" />);
     const { product: { title, price, thumbnail, id }, funcRemover } = this.props;
 
     return (
@@ -67,6 +71,7 @@ ProductCartCard.propTypes = {
     price: PropTypes.number.isRequired,
     id: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
+    quantidadeMax: PropTypes.number.isRequired,
   }).isRequired,
 };
 
