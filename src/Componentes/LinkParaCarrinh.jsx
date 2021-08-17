@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './LinkParaCarrinho.css';
+import propTypes from 'prop-types';
 
 class LinkParaCarrinho extends React.Component {
   render() {
+    const { view } = this.props;
     return (
       <Link
         data-testid="shopping-cart-button"
@@ -13,10 +16,15 @@ class LinkParaCarrinho extends React.Component {
           alt="Carrinho de Compras"
           width="80px"
         />
+        <div className="preview">{view()}</div>
       </Link>
 
     );
   }
 }
+
+LinkParaCarrinho.propTypes = {
+  view: propTypes.func.isRequired,
+};
 
 export default LinkParaCarrinho;

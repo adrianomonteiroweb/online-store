@@ -1,0 +1,16 @@
+.preview {
+  height: 15px;
+  position: relative;
+  top: -32.3%;
+  left: 33%;
+  background-color: #f44336;
+  color: white;
+  padding: 0.25em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a {
+  height: 80px;
+}

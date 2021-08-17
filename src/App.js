@@ -32,6 +32,8 @@ class App extends React.Component {
     this.fetchQueryCategory(id, value);
   }
 
+  previewItems = () => JSON.parse(localStorage.getItem('items')).length;
+
   buttonClick(e) {
     e.preventDefault();
     const { search } = this.state;
@@ -76,7 +78,7 @@ class App extends React.Component {
                     >
                       Search
                     </button>
-                    <LinkParaCarrinho />
+                    <LinkParaCarrinho view={ this.previewItems } />
                   </div>
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.
