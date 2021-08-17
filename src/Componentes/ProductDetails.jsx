@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getProductsFromCategoryAndQuery } from '../services/api';
+import { getProductsFromId } from '../services/api';
 import FreteComponent from './FreteComponent';
 import Valuation from './valuation';
 
@@ -13,17 +13,15 @@ class ProductDetails extends React.Component {
     };
   }
 
-  // falta um componente que renderize os produtos, para de lá eu pegar o item selecionado pelo usuário
-
   componentDidMount() {
     const { match: { params: { name } } } = this.props;
-    this.Detailsfetch('MLB1772063061', name);
+    this.Detailsfetch(name);
   }
 
-  async Detailsfetch(idProduct, product) {
+  async Detailsfetch(idProduct) {
     console.log('Carregando... ');
-    const promise = await getProductsFromCategoryAndQuery(idProduct, product);
-    this.setState({ productTest: promise.results[0] });
+    const promise = await getProductsFromId(idProduct);
+    this.setState({ productTest: promise });
   }
 
   render() {
