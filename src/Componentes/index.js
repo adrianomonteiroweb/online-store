@@ -1,7 +1,12 @@
-export { default as Loading } from './Loading';
-export { default as LinkParaCarrinho } from './LinkParaCarrinh';
 export { default as Carrinho } from './Carrinho';
 export { default as Categories } from './Categories';
 export { default as CategoriesContainer } from './CategoriesContainer';
+export { default as LinkParaCarrinho } from './LinkParaCarrinh';
+export { default as Loading } from './Loading';
 export { default as SearchBar } from './SearchBar';
-// export {  } from '.';
+export { default as BotoesDosProdutos } from './BotoesDosProdutos';
+export { default as FreteComponent } from './FreteComponent';
+export { default as ListProducts } from './ListProducts';
+export { default as ProductCard } from './ProductCard';
+export { default as ProductCartCard } from './ProductCartCard';
+export { default as Valuation } from './Valuation';
