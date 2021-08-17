@@ -17,8 +17,13 @@ class App extends React.Component {
       search: '',
       categories: [],
       categorySelected: [],
+      quantidade: 0,
     };
     this.fetch();
+  }
+
+  componentDidMount() {
+    this.previewItems();
   }
 
   handleChange({ target }) {
@@ -32,7 +37,9 @@ class App extends React.Component {
     this.fetchQueryCategory(id, value);
   }
 
-  previewItems = () => JSON.parse(localStorage.getItem('items')).length;
+  previewItems = () => this.setState(
+    { quantidade: JSON.parse(localStorage.getItem('items')).length },
+  );
 
   buttonClick(e) {
     e.preventDefault();
@@ -51,8 +58,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { search, categories, categorySelected } = this.state;
-
+    const { search, categories, categorySelected, quantidade } = this.state;
     return (
       <main>
         <BrowserRouter>
@@ -78,7 +84,7 @@ class App extends React.Component {
                     >
                       Search
                     </button>
-                    <LinkParaCarrinho view={ this.previewItems } />
+                    <LinkParaCarrinho view={ quantidade } />
                   </div>
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.

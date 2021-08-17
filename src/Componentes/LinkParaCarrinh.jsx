@@ -16,7 +16,7 @@ class LinkParaCarrinho extends React.Component {
           alt="Carrinho de Compras"
           width="80px"
         />
-        <div className="preview">{view()}</div>
+        <div data-testid="shopping-cart-size" className="preview">{view}</div>
       </Link>
 
     );
