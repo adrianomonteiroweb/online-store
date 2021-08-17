@@ -1,33 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getProductsFromId } from '../services/api';
-import FreteComponent from './FreteComponent';
-import Valuation from './valuation';
+import { FreteComponent, Valuation } from './index';
 
 class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
+
+    const { location: { state: { title, thumbnail, price, domainId, shipping:
+      { free_shipping: frete } } } } = props;
     this.state = {
-      productTest: { shipping: { free_shipping: true } },
+      productTest: {
+        title,
+        thumbnail,
+        price,
+        domainId,
+        shipping: { frete },
+      },
     };
   }
 
-  componentDidMount() {
-    const { match: { params: { name } } } = this.props;
-    this.Detailsfetch(name);
-  }
-
-  async Detailsfetch(idProduct) {
-    console.log('Carregando... ');
-    const promise = await getProductsFromId(idProduct);
-    this.setState({ productTest: promise });
-  }
-
   render() {
-    const { productTest } = this.state;
-    const { title, thumbnail, price, domainId, shipping:
-      { free_shipping: frete } } = productTest;
+    const { productTest: { title, thumbnail, price, domainId, shipping:
+      { free_shipping: frete } } } = this.state;
     return (
       <div>
         <Link to="/carrinho"> carrinho </Link>
@@ -61,11 +56,17 @@ class ProductDetails extends React.Component {
 }
 
 ProductDetails.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      name: PropTypes.string,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      title: PropTypes.string,
+      thumbnail: PropTypes.string,
+      price: PropTypes.number,
+      domainId: PropTypes.string,
+      shipping: PropTypes.shape({
+        free_shipping: PropTypes.bool,
+      }),
     }),
-  }),
-}.isRequired;
+  }).isRequired,
+};
 
 export default ProductDetails;
