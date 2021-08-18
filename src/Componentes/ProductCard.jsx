@@ -2,6 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
+// import * as mdb from 'mdb-ui-kit'; // lib
+import {
+  MDBCard,
+  MDBCardImage,
+  MDBCardBody, MDBCardTitle,
+  MDBRow,
+  MDBBtn,
+  MDBCol,
+} from 'mdb-react-ui-kit';
 // import BotoesDosProdutos from './BotoesDosProdutos';
 import FreteComponent from './FreteComponent';
 
@@ -68,38 +77,74 @@ class ProductCard extends React.Component {
     } = this.props;
 
     return (
-      <div
-        data-testid="product"
+      // <div
+      //   data-testid="product"
+      // >
+      <MDBCard
         style={ {
-          maxWidth: '30%',
+          maxWidth: '540px',
+          minWidth: '540px',
+          margin: '10px 10px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
         } }
+        data-testid="product"
       >
-        <h4 data-testid="shopping-cart-product-name">
-          Nome Do Produto:
-          {title}
-        </h4>
-        <h5>
-          Preço do Produto
-          {price}
-        </h5>
-        <FreteComponent frete={ frete } />
-        <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
-        <button
-          data-testid="product-add-to-cart"
-          type="submit"
-          id={ id }
-          onClick={ () => this.AddToCart(product) }
-        >
-          Adicionar ao carrinho
-        </button>
+        <MDBRow className="g-0">
+          <MDBCol
+            md="3"
+            style={ {
+              // backgroundColor: 'blue',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              maxWidth: '150px',
+            } }
+          >
+            <MDBCardImage
+              src={ thumbnail }
+              alt={ `Imagem do produto${title}` }
+              style={ { maxWidth: '150px', minWidth: '149px' } }
+              fluid
+            />
+          </MDBCol>
+          <MDBCol md="8">
+            <MDBCardBody>
+              <MDBCardTitle data-testid="shopping-cart-product-name">
+                {title}
+              </MDBCardTitle>
 
-        <Link
-          data-testid="product-detail-link"
-          to={ { pathname: `/${id}/details`, state: { ...product } } }
-        >
-          Ver detalhes
-        </Link>
-      </div>
+              {`R$${price}`}
+
+              <FreteComponent frete={ frete } />
+
+              <MDBBtn
+                data-testid="product-add-to-cart"
+                type="submit"
+                id={ id }
+                onClick={ () => this.AddToCart(product) }
+              >
+                Adicionar ao carrinho
+              </MDBBtn>
+              <br />
+              <Link
+                data-testid="product-detail-link"
+                to={ { pathname: `/${id}/details`, state: { ...product } } }
+              >
+                Ver detalhes
+              </Link>
+            </MDBCardBody>
+          </MDBCol>
+        </MDBRow>
+      </MDBCard>
+      //   {/* <Link
+      //     data-testid="product-detail-link"
+      //     to={ { pathname: `/${id}/details`, state: { ...product } } }
+      //   >
+      //     Ver detalhes
+      //   </Link> */}
+      // // </div>
     );
   }
 }
