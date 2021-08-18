@@ -49,6 +49,12 @@ class App extends React.Component {
     quantidadeTotal: items.length,
   }));
 
+  esvaziarCarrinho = () => {
+    this.setState({ items: [] });
+    localStorage.removeItem('items');
+    this.previewItems();
+  }
+
   buttonClick(e) {
     e.preventDefault();
     const { search } = this.state;
