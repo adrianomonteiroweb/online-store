@@ -1,21 +1,24 @@
 :root {
-  --cor-principal: #7587B4;
+
+  --cor-principal: #7587b4;
+
   --cor-letter: #141414;
+
   --color-blue-dark: #253354;
+
 }
 
 .cardCart-Container {
   background-color: var(--cor-principal);
   color: var(--cor-letter);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-height: 100vh;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   justify-self: center;
+  min-height: 100vh;
 }
 
 .containerItem {
-  width: 400px;
   display: flex;
+  width: 400px;
 }

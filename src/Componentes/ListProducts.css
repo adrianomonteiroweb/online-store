@@ -1,6 +1,6 @@
 .listOfProducs {
-  width: auto;
   display: flex;
-  margin: 0 auto;
   flex-wrap: wrap;
+  margin: 0 auto;
+  width: auto;
 }

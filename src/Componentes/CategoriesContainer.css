@@ -4,10 +4,10 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  width: auto;
   margin-bottom: 10px;
   margin-left: 10px;
   padding: 20px;
+  width: auto;
 }
 
 label {

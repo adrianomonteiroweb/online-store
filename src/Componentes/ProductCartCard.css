@@ -1,11 +1,19 @@
 :root {
-  --cor-transparente: rgba(0,0,0,.02);
-  --cor-btn-link: #B3BDD4;
+
+  --cor-transparente: rgba(0, 0, 0, 0.02);
+
+  --cor-btn-link: #b3bbd4;
+
   --border-color: #253354;
+
   --color-background-card: #fafafafd;
+
   --color-black: black;
+
   --color-white: white;
+
   --color-blue-dark: #253354;
+
 }
 
 .produto {
@@ -23,31 +31,36 @@
 }
 
 .produto:hover {
-  animation: hithere 0.5s ease ;
+  animation: hithere 0.5s ease;
 }
 
 h4 {
-  margin-bottom: 12px;
   font-size: 18px;
-  max-height: 55px !important;
+  margin-bottom: 12px;
+  max-height: 55px ! important;
   overflow: hidden;
 }
 
 .price-tag-simbol {
-  margin-right: .3em
+  margin-right: 0.3em;
 }
 
 @keyframes hithere {
+
   30% { transform: translateX(8px); }
+
   50% { transform: translateX(-8px); }
+
   80% { transform: translateX(8px); }
-  100% { transform: translateX(0px); }
+
+  100% { transform: translateX(0); }
+
 }
 
 .containerButtons {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .remove {
@@ -55,36 +68,29 @@ h4 {
 }
 
 a {
+  background-color: var(--color-blue-dark) ! important;
+  color: var(--color-white) ! important;
+  height: 38px ! important;
+  margin-bottom: 10%;
   margin-left: 13%;
   margin-top: -5px;
-  background-color: var(--color-blue-dark) !important;
-  color: var(--color-white) !important;
 }
 
 a:hover {
-  background-color: var(--cor-btn-link) !important;
-  color: var(--color-black) !important;
-}
-
-a:hover {
-  background-color: var(--cor-transparente) !important;
+  background-color: var(--cor-transparente) ! important;
+  color: var(--color-black) ! important;
 }
 
 .containerButtons div {
-  padding: 8px 10px;
   background-color: var(--color-white);
   color: var(--color-black);
-}
-
-a {
-  height: 38px !important;
-  margin-bottom: 10%;
+  padding: 8px 10px;
 }
 
 .botoes {
-  font-size: 1em !important;
+  font-size: 1em ! important;
 }
 
 .blue {
-  background-color: var(--color-blue-dark) !important;
+  background-color: var(--color-blue-dark) ! important;
 }
