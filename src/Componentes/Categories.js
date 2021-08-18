@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './ProductCard.css';
+
 import {
   MDBBtn,
 
@@ -8,8 +10,11 @@ import {
 class Categories extends React.Component {
   render() {
     const { category, handleClick, id } = this.props;
+    const buttomCss = {
+      flexGrow: '1',
+    };
     return (
-      <label htmlFor="category">
+      <label htmlFor="category" id="label-category-btn">
         <MDBBtn
           onClick={ (e) => handleClick(e) }
           data-testid="category"
@@ -17,6 +22,7 @@ class Categories extends React.Component {
           type="radio"
           id={ id }
           value={ category }
+          style={ buttomCss }
         >
           { category }
         </MDBBtn>

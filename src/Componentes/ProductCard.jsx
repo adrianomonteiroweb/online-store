@@ -87,7 +87,7 @@ class ProductCard extends React.Component {
         style={ {
           maxWidth: '450px',
           minWidth: '450px',
-          margin: '5px 5px',
+          margin: '5px 10px 5px 30px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -98,7 +98,6 @@ class ProductCard extends React.Component {
           <MDBCol
             md="3"
             style={ {
-              // backgroundColor: 'blue',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',

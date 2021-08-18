@@ -21,6 +21,7 @@ label {
   display: flex;
   justify-content: space-between;
   width: 98vw;
+  background-color: #fff;
 }
 
 .search-cart input, .search-cart form {
