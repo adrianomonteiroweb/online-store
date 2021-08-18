@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './ProductCard.css';
 import BotoesDosProdutos from './BotoesDosProdutos';
 
 class ProductCartCard extends React.Component {
