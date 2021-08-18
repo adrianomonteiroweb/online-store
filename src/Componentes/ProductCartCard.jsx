@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import BotoesDosProdutos from './BotoesDosProdutos';
+import './ProductCartCard.css';
 
 class ProductCartCard extends React.Component {
   constructor(props) {
@@ -34,23 +35,26 @@ class ProductCartCard extends React.Component {
 
     return (
       <div
+        className="produto"
         data-testid="product"
-        style={ {
-          maxWidth: '30%',
-        } }
       >
-        <h4 data-testid="shopping-cart-product-name">
-          Nome Do Produto:
-          {title}
-        </h4>
-        <h5>
-          Preço do Produto
-          {price}
-        </h5>
-        <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
-        <Link data-testid="product-detail-link" to={ `/${title}/details` }>
-          Ver detalhes
-        </Link>
+        <div>
+          <h4 data-testid="shopping-cart-product-name">
+            {title}
+          </h4>
+          <h5>
+            <span className="price-tag-simbol">R$</span>
+            {price.toFixed(2)}
+          </h5>
+          <img src={ thumbnail } alt={ `Imagem do produto${title}` } width="100px" />
+          <Link
+            className="btn btn-outline-primary"
+            data-testid="product-detail-link"
+            to={ `/${title}/details` }
+          >
+            Ver detalhes
+          </Link>
+        </div>
         <BotoesDosProdutos
           id={ id }
           funcRemover={ funcRemover }
