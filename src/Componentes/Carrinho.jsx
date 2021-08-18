@@ -1,6 +1,4 @@
 import React from 'react';
-// import Loading from './Loading';
-// import { getProductsFromCategoryAndQuery } from '../services/api';
 import ProductCartCard from './ProductCartCard';
 
 class Carrinho extends React.Component {
@@ -16,26 +14,38 @@ class Carrinho extends React.Component {
   }
 
   getStorageItems = () => {
-    // const { listaDeProdutos } = this.state;
     const localStorageItems = JSON.parse(localStorage.getItem('items'));
-    if (localStorageItems !== null) {
+
+    if (localStorageItems === null || localStorageItems === []) {
+      this.setState({ loading: true });
+    } else if (localStorage.items.length === 2) {
+      this.setState({ loading: true });
+    } else {
       this.setState({ listaDeProdutos: [...localStorageItems] });
+      this.setState({ loading: false });
     }
   };
 
   remover = (id) => {
     const { listaDeProdutos } = this.state;
-    const resultadoBusca = listaDeProdutos.find((elemento) => elemento.id === id);
+    const findCartItem = listaDeProdutos.find((elemento) => elemento.id === id);
+
+    const localStorageItems = JSON.parse(localStorage.getItem('items'));
+    const filtered = localStorageItems.filter((item) => item.id !== id);
+    localStorage.setItem('items', JSON.stringify(filtered));
+
     const indexARetirar = listaDeProdutos
-      .indexOf(resultadoBusca);
+      .indexOf(findCartItem);
     listaDeProdutos.splice(indexARetirar, 1);
     this.setState({ listaDeProdutos });
+
+    if (localStorage.getItem('items').length === 2) {
+      this.setState({ loading: true });
+    }
   }
 
   render() {
     const { listaDeProdutos } = this.state;
-
-    // if (loading) return <Loading />;
 
     if (listaDeProdutos.length === 0) {
       return (
