@@ -24,7 +24,7 @@ class LinkParaCarrinho extends React.Component {
 }
 
 LinkParaCarrinho.propTypes = {
-  view: propTypes.func.isRequired,
+  view: propTypes.number.isRequired,
 };
 
 export default LinkParaCarrinho;

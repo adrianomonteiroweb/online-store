@@ -8,7 +8,6 @@ class Carrinho extends React.Component {
     super(props);
     this.state = {
       listaDeProdutos: [],
-      loading: true,
     };
   }
 
@@ -21,9 +20,6 @@ class Carrinho extends React.Component {
     const localStorageItems = JSON.parse(localStorage.getItem('items'));
     if (localStorageItems !== null) {
       this.setState({ listaDeProdutos: [...localStorageItems] });
-      this.setState({ loading: false });
-    } else {
-      this.setState({ loading: true });
     }
   };
 
@@ -37,11 +33,11 @@ class Carrinho extends React.Component {
   }
 
   render() {
-    const { listaDeProdutos, loading } = this.state;
+    const { listaDeProdutos } = this.state;
 
     // if (loading) return <Loading />;
 
-    if (loading) {
+    if (listaDeProdutos.length === 0) {
       return (
         <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
       );
