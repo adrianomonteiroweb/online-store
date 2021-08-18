@@ -12,7 +12,7 @@ class LinkParaCarrinho extends React.Component {
         to="/carrinho"
       >
         <img
-          src="https://media.gettyimages.com/vectors/full-cart-shopping-and-retail-thin-line-icon-set-vector-id1084146520?s=612x612"
+          src="https://cdn-0.imagensemoldes.com.br/wp-content/uploads/2020/07/%C3%8Dcone-Carrinho-de-Compras-PNG.png"
           alt="Carrinho de Compras"
           width="80px"
         />
