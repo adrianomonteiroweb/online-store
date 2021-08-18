@@ -4,15 +4,15 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  min-width: 260px;
   max-width: 260px;
   margin-bottom: 10px;
   margin-left: 10px;
+  min-width: 260px;
   padding: 20px;
 }
 
 #label-category-btn {
-  display: flex;
+  /* display: flex; */
   margin-bottom: 9px;
 }
 
