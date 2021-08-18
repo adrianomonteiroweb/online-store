@@ -1,9 +1,9 @@
 .preview {
-  background-color: #f44336;
-  color: white;
+  background-color: #883e06;
+  color: rgb(235, 235, 235);
   display: inline-block;
-  height: 15px;
-  left: 33%;
+  height: 26px;
+  left: 3vmax;
   padding: 0.25em;
   position: relative;
   text-align: center;

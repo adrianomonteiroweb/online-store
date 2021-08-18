@@ -85,9 +85,9 @@ class ProductCard extends React.Component {
       // >
       <MDBCard
         style={ {
-          maxWidth: '540px',
-          minWidth: '540px',
-          margin: '10px 10px',
+          maxWidth: '450px',
+          minWidth: '450px',
+          margin: '5px 5px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -108,7 +108,7 @@ class ProductCard extends React.Component {
             <MDBCardImage
               src={ thumbnail }
               alt={ `Imagem do produto${title}` }
-              style={ { maxWidth: '150px', minWidth: '149px' } }
+              style={ { maxWidth: '120px', minWidth: '120px' } }
               fluid
             />
           </MDBCol>
