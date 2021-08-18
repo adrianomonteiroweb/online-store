@@ -8,16 +8,8 @@ class BotoesDosProdutos extends React.Component {
 
     return (
       <div className="containerButtons">
+        <button type="button" onClick={ () => funcRemover(id) }>X</button>
         <button
-          className="btn btn-danger remove"
-          type="button"
-          onClick={ () => funcRemover(id) }
-        >
-          X
-
-        </button>
-        <button
-          className="btn btn-dark botoes blue"
           data-testid="product-increase-quantity"
           type="button"
           onClick={ () => onClickIncress() }
@@ -33,7 +25,6 @@ class BotoesDosProdutos extends React.Component {
 
         </div>
         <button
-          className="btn btn-dark blue"
           data-testid="product-decrease-quantity"
           type="button"
           onClick={ () => onClickDecress() }
