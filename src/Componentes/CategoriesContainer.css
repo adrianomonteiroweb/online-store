@@ -4,11 +4,12 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  max-width: 260px;
   margin-bottom: 10px;
   margin-left: 10px;
+  max-width: 260px;
   min-width: 260px;
   padding: 20px;
+  width: auto;
 }
 
 #label-category-btn {
