@@ -1,0 +1,83 @@
+:root {
+  --cor-transparente: rgba(0, 0, 0, 0.02);
+  --cor-btn-link: #b3bbd4;
+  --border-color: #747881;
+  --color-background-card: #fafafafd;
+  --color-black: black;
+  --color-white: white;
+  --color-blue-dark: #253354;
+}
+
+.produto {
+  background-color: var(--color-background-card);
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 310px;
+  justify-content: flex-start;
+  justify-self: center;
+  margin: 20px auto;
+  padding: 30px;
+  width: 400px;
+}
+
+.produto:hover {
+  animation: hithere 0.5s ease;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  max-height: 55px ! important;
+  overflow: hidden;
+}
+
+.price-tag-simbol {
+  margin-right: 0.3em;
+}
+
+@keyframes hithere {
+  30% { transform: translateX(8px); }
+  50% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
+}
+
+.containerButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.remove {
+  margin-right: 32px;
+}
+
+a {
+  background-color: var(--color-blue-dark) ! important;
+  color: var(--color-white) ! important;
+  height: 38px ! important;
+  margin-bottom: 10%;
+  margin-left: 13%;
+  margin-top: -5px;
+}
+
+a:hover {
+  background-color: var(--cor-transparente) ! important;
+  color: var(--color-black) ! important;
+}
+
+.containerButtons div {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 8px 10px;
+}
+
+.botoes {
+  font-size: 1em ! important;
+}
+
+.blue {
+  background-color: var(--color-blue-dark) ! important;
+}

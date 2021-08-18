@@ -1,0 +1,24 @@
+:root {
+
+  --cor-principal: #7587b4;
+
+  --cor-letter: #141414;
+
+  --color-blue-dark: #253354;
+
+}
+
+.cardCart-Container {
+  background-color: var(--cor-principal);
+  color: var(--cor-letter);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  justify-self: center;
+  min-height: 100vh;
+}
+
+.containerItem {
+  display: flex;
+  width: 400px;
+}
