@@ -10,6 +10,7 @@ import ProductDetails from './Componentes/ProductDetails';
 class App extends React.Component {
   constructor() {
     super();
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.fetchQueryCategory = this.fetchQueryCategory.bind(this);
@@ -45,9 +46,13 @@ class App extends React.Component {
     this.fetchQueryCategory(id, value);
   }
 
-  previewItems = () => this.setState(({ items }) => ({
-    quantidadeTotal: items.length,
-  }));
+  previewItems = () => {
+    this.setState({
+      items: JSON.parse(localStorage.getItem('items')) });
+    this.setState(({ items }) => ({
+      quantidadeTotal: items.length,
+    }));
+  }
 
   esvaziarCarrinho = () => {
     this.setState({ items: [] });
@@ -108,7 +113,10 @@ class App extends React.Component {
                       handleClick={ this.handleClick }
                       categories={ categories }
                     />
-                    <ListProducts products={ categorySelected } />
+                    <ListProducts
+                      onClick={ this.previewItems }
+                      products={ categorySelected }
+                    />
                   </div>
                 </div>
               ) }

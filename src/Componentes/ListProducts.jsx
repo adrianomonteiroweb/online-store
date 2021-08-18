@@ -13,7 +13,7 @@ class ListProducts extends React.Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, onClick } = this.props;
     return (
       <div>
         <p>Produtos</p>
@@ -22,7 +22,12 @@ class ListProducts extends React.Component {
         >
           {products
             .map((obj) => (
-              <ProductCard key={ obj.id } product={ obj } AddToCart={ this.AddToCart } />
+              <ProductCard
+                key={ obj.id }
+                product={ obj }
+                onClick={ onClick }
+                AddToCart={ this.AddToCart }
+              />
               // <ProductCard key={ obj.id } product={ obj } />
             ))}
         </section>
@@ -32,6 +37,7 @@ class ListProducts extends React.Component {
 }
 
 ListProducts.propTypes = {
+  onClick: PropTypes.func.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

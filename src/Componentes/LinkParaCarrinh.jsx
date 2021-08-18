@@ -5,7 +5,7 @@ import propTypes from 'prop-types';
 
 class LinkParaCarrinho extends React.Component {
   render() {
-    const { view } = this.props;
+    const { view: NumberOfItems } = this.props;
     return (
       <Link
         data-testid="shopping-cart-button"
@@ -16,7 +16,7 @@ class LinkParaCarrinho extends React.Component {
           alt="Carrinho de Compras"
           width="80px"
         />
-        <div data-testid="shopping-cart-size" className="preview">{view}</div>
+        <div data-testid="shopping-cart-size" className="preview">{NumberOfItems}</div>
       </Link>
 
     );

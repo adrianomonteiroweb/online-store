@@ -27,6 +27,7 @@ class ProductCard extends React.Component {
   }
 
   AddToCart = (product) => {
+    const { onClick } = this.props;
     const { title, price, thumbnail, id, available_quantity: quantidadeMax } = product;
     const { cartEntries } = this.state;
     const item = {
@@ -49,6 +50,7 @@ class ProductCard extends React.Component {
       );
       this.setState({ cartEntries: false });
     }
+    onClick();
   }
 
   render() {
@@ -106,7 +108,7 @@ class ProductCard extends React.Component {
 }
 
 ProductCard.propTypes = {
-  // funcRemover: PropTypes.func,
+  onClick: PropTypes.func,
   product: PropTypes.shape({
     title: PropTypes.string,
     price: PropTypes.number,
@@ -119,8 +121,8 @@ ProductCard.propTypes = {
   }).isRequired,
 };
 
-// ProductCard.defaultProps = {
-//   funcRemover: () => {},
-// };
+ProductCard.defaultProps = {
+  onClick: () => {},
+};
 
 export default ProductCard;

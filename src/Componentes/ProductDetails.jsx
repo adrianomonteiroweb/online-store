@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FreteComponent, Valuetion } from './index';
+import { FreteComponent, Valuetion, LinkParaCarrinho } from './index';
 
 class ProductDetails extends React.Component {
   constructor(props) {
@@ -17,15 +16,26 @@ class ProductDetails extends React.Component {
         domainId,
         shipping: { frete },
       },
+      items: JSON.parse(localStorage.getItem('items')),
+      quantidadeTotal: 0,
     };
   }
 
+  componentDidMount() {
+    this.previewItems();
+  }
+
+  previewItems = () => this.setState(({ items }) => ({
+    items: JSON.parse(localStorage.getItem('items')),
+    quantidadeTotal: items.length,
+  }));
+
   render() {
-    const { productTest: { title, thumbnail, price, domainId, shipping:
+    const { quantidadeTotal, productTest: { title, thumbnail, price, domainId, shipping:
       { free_shipping: frete } } } = this.state;
     return (
       <div>
-        <Link to="/carrinho"> carrinho </Link>
+        <LinkParaCarrinho view={ quantidadeTotal } />
 
         <h4
           data-testid="product-detail-name"
