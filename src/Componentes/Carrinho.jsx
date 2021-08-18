@@ -6,7 +6,6 @@ class Carrinho extends React.Component {
     super(props);
     this.state = {
       listaDeProdutos: [],
-      loading: true,
     };
   }
 
@@ -17,15 +16,10 @@ class Carrinho extends React.Component {
   getStorageItems = () => {
     const localStorageItems = JSON.parse(localStorage.getItem('items'));
 
-    if (localStorageItems === null || localStorageItems === []) {
-      this.setState({ loading: true });
-    } else if (localStorage.items.length === 2) {
-      this.setState({ loading: true });
-    } else {
+    if (localStorageItems !== null && localStorageItems !== []) {
       this.setState({ listaDeProdutos: [...localStorageItems] });
-      this.setState({ loading: false });
     }
-  };
+  }
 
   remover = (id) => {
     const { listaDeProdutos } = this.state;
@@ -39,16 +33,12 @@ class Carrinho extends React.Component {
       .indexOf(findCartItem);
     listaDeProdutos.splice(indexARetirar, 1);
     this.setState({ listaDeProdutos });
-
-    if (localStorage.getItem('items').length === 2) {
-      this.setState({ loading: true });
-    }
   }
 
   render() {
-    const { listaDeProdutos, loading } = this.state;
+    const { listaDeProdutos } = this.state;
 
-    if (loading) {
+    if (listaDeProdutos.length === 0) {
       return (
         <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
       );

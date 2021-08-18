@@ -10,15 +10,29 @@ import ProductDetails from './Componentes/ProductDetails';
 class App extends React.Component {
   constructor() {
     super();
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.fetchQueryCategory = this.fetchQueryCategory.bind(this);
+
+    if (!JSON
+      .parse(localStorage.getItem('items'))) {
+      localStorage
+        .setItem('items', JSON.stringify([]));
+    }
+
     this.state = {
       search: '',
       categories: [],
       categorySelected: [],
+      items: JSON.parse(localStorage.getItem('items')),
+      quantidadeTotal: 0,
     };
     this.fetch();
+  }
+
+  componentDidMount() {
+    this.previewItems();
   }
 
   handleChange({ target }) {
@@ -30,6 +44,20 @@ class App extends React.Component {
   handleClick({ target }) {
     const { id, value } = target;
     this.fetchQueryCategory(id, value);
+  }
+
+  previewItems = () => {
+    this.setState({
+      items: JSON.parse(localStorage.getItem('items')) });
+    this.setState(({ items }) => ({
+      quantidadeTotal: items.length,
+    }));
+  }
+
+  esvaziarCarrinho = () => {
+    this.setState({ items: [] });
+    localStorage.removeItem('items');
+    this.previewItems();
   }
 
   buttonClick(e) {
@@ -49,8 +77,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { search, categories, categorySelected } = this.state;
-
+    const { search, categories, categorySelected, quantidadeTotal } = this.state;
     return (
       <main>
         <BrowserRouter>
@@ -76,7 +103,7 @@ class App extends React.Component {
                     >
                       Search
                     </button>
-                    <LinkParaCarrinho />
+                    <LinkParaCarrinho view={ quantidadeTotal } />
                   </div>
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.
@@ -86,7 +113,10 @@ class App extends React.Component {
                       handleClick={ this.handleClick }
                       categories={ categories }
                     />
-                    <ListProducts products={ categorySelected } />
+                    <ListProducts
+                      onClick={ this.previewItems }
+                      products={ categorySelected }
+                    />
                   </div>
                 </div>
               ) }
