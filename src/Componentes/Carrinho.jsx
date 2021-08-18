@@ -16,10 +16,10 @@ class Carrinho extends React.Component {
   getStorageItems = () => {
     const localStorageItems = JSON.parse(localStorage.getItem('items'));
 
-    if (localStorageItems !== null && localStorageItems !== [])
+    if (localStorageItems !== null && localStorageItems !== []) {
       this.setState({ listaDeProdutos: [...localStorageItems] });
     }
-  };
+  }
 
   remover = (id) => {
     const { listaDeProdutos } = this.state;
