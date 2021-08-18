@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCartCard from './ProductCartCard';
+import './Carrinho.css';
 
 class Carrinho extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Carrinho extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="cardCart-Container">
         {listaDeProdutos.map((produto) => (
           <div key={ produto.id } className="containerItem">
             <ProductCartCard
