@@ -1,5 +1,5 @@
-[ data-testid = 'product' ] {
-  background-color: white;
-  border-radius: 20px;
-  margin: 5px;
+@import '~mdb-ui-kit/css/mdb.min.css' ;
+
+.MDBcardImage {
+  width: 2000px;
 }
