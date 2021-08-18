@@ -1,14 +1,14 @@
 .preview {
-  height: 15px;
-  position: relative;
-  top: -32.3%;
-  left: 33%;
   background-color: #f44336;
   color: white;
+  display: inline-block;
+  height: 15px;
+  left: 33%;
   padding: 0.25em;
+  position: relative;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  top: -32.3%;
 }
 
 a {
