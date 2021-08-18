@@ -108,7 +108,7 @@ class App extends React.Component {
                   <p data-testid="home-initial-message">
                     Digite algum termo de pesquisa ou escolha uma categoria.
                   </p>
-                  <div className="row">
+                  <div className="row-content">
                     <CategoriesContainer
                       handleClick={ this.handleClick }
                       categories={ categories }

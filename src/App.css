@@ -6,10 +6,14 @@
   text-align: center;
 }
 
-.row {
+.row-content {
   display: flex;
   justify-content: space-between;
   width: 98%;
+}
+
+label {
+  width: 100%;
 }
 
 .search-cart {
