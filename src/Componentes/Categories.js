@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import './ProductCard.css';
-
 import {
   MDBBtn,
 
 } from 'mdb-react-ui-kit';
+import './ProductCard.css';
 
 class Categories extends React.Component {
   render() {

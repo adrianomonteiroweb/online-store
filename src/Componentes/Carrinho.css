@@ -22,3 +22,9 @@
   display: flex;
   width: 400px;
 }
+
+[data-testid="shopping-cart-empty-message"] {
+  background-color: #141414;
+  font-size: 50px;
+  
+}
