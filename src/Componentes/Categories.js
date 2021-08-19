@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import {
-  MDBBtn,
+import { MDBBtn,
 
 } from 'mdb-react-ui-kit';
 
