@@ -11,6 +11,6 @@
   top: -32.3%;
 }
 
-a {
+[data-testid="shopping-cart-button"] {
   height: 80px;
 }

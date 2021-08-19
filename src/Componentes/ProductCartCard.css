@@ -26,7 +26,7 @@
   animation: hithere 0.5s ease;
 }
 
-h4 {
+[data-testid="shopping-cart-product-name"] {
   font-size: 18px;
   margin-bottom: 12px;
   max-height: 55px ! important;
@@ -54,7 +54,7 @@ h4 {
   margin-right: 32px;
 }
 
-a {
+[data-testid="product-detail-link"] {
   background-color: var(--color-blue-dark) ! important;
   color: var(--color-white) ! important;
   height: 38px ! important;
@@ -63,7 +63,7 @@ a {
   margin-top: -5px;
 }
 
-a:hover {
+[data-testid="product-detail-link"]:hover {
   background-color: var(--cor-transparente) ! important;
   color: var(--color-black) ! important;
 }
