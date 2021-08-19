@@ -27,7 +27,7 @@
 }
 
 [data-testid="shopping-cart-product-name"] {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 12px;
   max-height: 55px ! important;
   overflow: hidden;
