@@ -14,9 +14,11 @@ class ListProducts extends React.Component {
 
   render() {
     const { products, onClick } = this.props;
+
     return (
       <div>
         <p>Produtos</p>
+
         <section
           className="listOfProducs"
         >

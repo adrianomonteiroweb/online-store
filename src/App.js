@@ -77,6 +77,10 @@ class App extends React.Component {
   }
 
   render() {
+    // const titleCss = {
+    //   // display: 'absolute',
+    //   marginLeft: '200px',
+    // };
     const { search, categories, categorySelected, quantidadeTotal } = this.state;
     return (
       <main>
@@ -90,6 +94,9 @@ class App extends React.Component {
               render={ () => (
                 <div className="App">
                   <div className="search-cart">
+                    <p data-testid="home-initial-message">
+                      Digite algum termo de pesquisa ou escolha uma categoria.
+                    </p>
                     <SearchBar
                       handleChange={ this.handleChange }
                       value={ search }
@@ -105,14 +112,13 @@ class App extends React.Component {
                     </button>
                     <LinkParaCarrinho view={ quantidadeTotal } />
                   </div>
-                  <p data-testid="home-initial-message">
-                    Digite algum termo de pesquisa ou escolha uma categoria.
-                  </p>
+                  <span style={ { padding: '20px' } } />
                   <div className="row-content">
                     <CategoriesContainer
                       handleClick={ this.handleClick }
                       categories={ categories }
                     />
+
                     <ListProducts
                       onClick={ this.previewItems }
                       products={ categorySelected }
