@@ -1,10 +1,17 @@
 :root {
+
   --cor-transparente: rgba(0, 0, 0, 0.02);
+
   --cor-btn-link: #b3bbd4;
+
   --border-color: #747881;
+
   --color-background-card: #fafafafd;
+
   --color-black: black;
+
   --color-white: white;
+
   --color-blue-dark: #253354;
 }
 
@@ -26,7 +33,7 @@
   animation: hithere 0.5s ease;
 }
 
-[data-testid="shopping-cart-product-name"] {
+[ data-testid = 'shopping-cart-product-name' ] {
   font-size: 17px;
   margin-bottom: 12px;
   max-height: 55px ! important;
@@ -38,9 +45,13 @@
 }
 
 @keyframes hithere {
+
   30% { transform: translateX(8px); }
+
   50% { transform: translateX(-8px); }
+
   80% { transform: translateX(8px); }
+  
   100% { transform: translateX(0); }
 }
 
@@ -54,7 +65,7 @@
   margin-right: 32px;
 }
 
-[data-testid="product-detail-link"] {
+[ data-testid = 'product-detail-link' ] {
   background-color: var(--color-blue-dark) ! important;
   color: var(--color-white) ! important;
   height: 38px ! important;
@@ -63,7 +74,7 @@
   margin-top: -5px;
 }
 
-[data-testid="product-detail-link"]:hover {
+[ data-testid = 'product-detail-link' ]:hover {
   background-color: var(--cor-transparente) ! important;
   color: var(--color-black) ! important;
 }
