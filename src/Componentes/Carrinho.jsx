@@ -42,7 +42,7 @@ class Carrinho extends React.Component {
 
     if (listaDeProdutos.length === 0) {
       return (
-        <div>
+        <div className="countainer-empty-cart">
           <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
           <img className="imagem-cart" src={ imagem } alt="carrinho-vazio" />
         </div>
