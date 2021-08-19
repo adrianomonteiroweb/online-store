@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCartCard from './ProductCartCard';
 import './Carrinho.css';
+import imagem from './unnamed.gif';
 
 class Carrinho extends React.Component {
   constructor(props) {
@@ -41,7 +42,10 @@ class Carrinho extends React.Component {
 
     if (listaDeProdutos.length === 0) {
       return (
-        <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+        <div>
+          <p data-testid="shopping-cart-empty-message">Seu carrinho está vazio</p>
+          <img className="imagem-cart" src={ imagem } alt="carrinho-vazio" />
+        </div>
       );
     }
     return (
