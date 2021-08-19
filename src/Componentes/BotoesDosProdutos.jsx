@@ -19,6 +19,7 @@ class BotoesDosProdutos extends React.Component {
         <button
           className="btn btn-dark botoes blue"
           type="button"
+          data-testid="product-increase-quantity"
           onClick={ () => onClickIncress() }
         >
           +
