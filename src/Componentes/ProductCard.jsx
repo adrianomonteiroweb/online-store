@@ -131,6 +131,8 @@ class ProductCard extends React.Component {
               </MDBBtn>
               <br />
               <Link
+                style={ { marginTop: '5px' } }
+                className="btn btn-outline-primary"
                 data-testid="product-detail-link"
                 to={ { pathname: `/${id}/details`, state: { ...product } } }
               >

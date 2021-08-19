@@ -1,16 +1,16 @@
 .preview {
   background-color: #883e06;
+  bottom: 23px;
   color: rgb(235, 235, 235);
   display: inline-block;
   height: 26px;
-  left: 3vmax;
+  left: 31px;
   padding: 0.25em;
   position: relative;
   text-align: center;
   text-decoration: none;
-  top: -32.3%;
 }
 
-a {
-  height: 80px;
+[ data-testid = 'shopping-cart-button' ] {
+  height: 70px;
 }
