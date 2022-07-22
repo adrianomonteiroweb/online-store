@@ -1,24 +1,12 @@
-### Termos de acordos
+# Projeto em grupo de Front-End Online Store!
 
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe
-
-# Boas vindas ao repositório do projeto de Front-End Online Store!
-
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+Projeto para prática de metodologias ágeis com SCRUM e Kanban em um projeto em grupo. 🚀
 
 # Sumário
 
 - [Habilidades](#habilidades)
 - [Entregáveis](#Entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
-  - [Desenvolvimento](#desenvolvimento)
-  - [Data de entrega](#data-de-entrega)
-- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
-  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
-  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
-- [Como desenvolver](#como-desenvolver)
   - [Documentação da API do Mercado Livre](#documentação-da-api-do-mercado-livre)
     - [Exemplo de requisição para listar categorias](exemplo-de-requisição-para-listar-categorias)
     - [Exemplo de requisição de busca](#exemplo-de-requisição-de-busca)
@@ -26,11 +14,13 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
   - [Usando o Trello como ferramenta kanban](#usando-o-trello-como-ferramenta-kanban)
 - [Como desenvolver](#como-desenvolver)
 - [Requisitos do projeto](#requisitos-do-projeto)
+
   - [Grupos de prioridade](#grupos-de-prioridade)
   - [Requisitos Bônus](#requisitos-bônus)
   - [Lista de requisitos](#lista-de-requisitos)
 
     `Requisitos Obrigatórios`
+
     - [1. Implemente o módulo de acesso à api do Mercado Livre](#1-implemente-o-módulo-de-acesso-à-api-do-mercado-livre)
     - [2. Crie uma página de listagem de produtos vazia](#2-crie-uma-página-de-listagem-de-produtos-vazia)
     - [3. Crie a página do carrinho de compras](#3-crie-a-página-do-carrinho-de-compras)
@@ -45,11 +35,13 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [12. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento](#12-finalize-a-compra-vendo-um-resumo-dela-preenchendo-os-seus-dados-e-escolhendo-a-forma-de-pagamento)
 
     `Requisitos Bônus`
+
     - [13. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece](#13-mostre-junto-ao-ícone-do-carrinho-a-quantidade-de-produtos-dentro-dele-em-todas-as-telas-em-que-ele-aparece)
     - [14. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque](#14-limite-a-quantidade-de-produtos-adicionados-ao-carrinho-pela-quantidade-disponível-em-estoque)
     - [15. Mostre quais produtos tem o frete grátis](#15-mostre-quais-produtos-tem-o-frete-grátis)
 
     `Requisitos Extras Não Avaliativos`
+
     - [16. Faça um layout para o site](#16-faça-um-layout-para-o-site)
     - [17. Faça um layout responsivo para o site](#17-faça-um-layout-responsivo-para-o-site)
     - [18. Crie um seletor dropdown para ordenar a lista de produto por maior e menor preço](#18-crie-um-seletor-dropdown-para-ordenar-a-lista-de-produto-por-maior-e-menor-preço)
@@ -57,19 +49,16 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
     - [20. Crie um slider lateral para exibir o carrinho na tela principal](#20-crie-um-slider-lateral-para-exibir-o-carrinho-na-tela-principal)
     - [21. Destaque, na tela principal, os produtos já adicionados ao carrinho](#21-destaque-na-tela-principal-os-produtos-já-adicionados-ao-carrinho)
     - [22. Impeça que a quantidade do produto seja negativa](#22-impeça-que-a-quantidade-do-produto-seja-negativa)
-- [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
-- [Revisando um pull request](#revisando-um-pull-request)
-- [Avisos finais](#avisos-finais)
 
 # Habilidades
 
 Nesse projeto, você será capaz de:
 
-* Entender o que são Métodos Ágeis
-* Entender o que é Kanban
-* Entender o que é Scrum
-* Trabalhar em equipes utilizando Kanban ou Scrum de maneira eficaz
-* Praticar todas as habilidades desenvolvidas até agora no módulo de Front-End
+- Entender o que são Métodos Ágeis
+- Entender o que é Kanban
+- Entender o que é Scrum
+- Trabalhar em equipes utilizando Kanban ou Scrum de maneira eficaz
+- Praticar todas as habilidades desenvolvidas até agora no módulo de Front-End
 
 ---
 
@@ -80,115 +69,16 @@ Para entregar o seu projeto você deverá criar um Pull Request neste repositór
 Lembre-se que você pode consultar nosso conteúdo sobre
 [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
---- 
+---
 
 ## O que deverá ser desenvolvido
 
 Neste projeto você criará uma versão simplificada, sem persistência no banco de dados, de uma **loja online**, desenvolvendo em grupo suas funcionalidades de acordo com demandas definidas em um quadro _Kanban_, em um cenário mais próximo ao do mercado de trabalho. A partir dessas demandas, teremos uma aplicação onde os usuários poderão:
-  - Buscar produtos por termos e categorias a partir da _API do Mercado Livre_;
-  - Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
-  - Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
-  - E por fim, finalizar a compra (simulada) dos itens selecionados.
 
----
-
-## Desenvolvimento
-
----
-
-## Data de entrega
-
-  - Projeto em grupo;
-
-  - Serão X dias de projeto;
-
-  - Data de entrega para avaliação final do projeto: `dd/mm/yyyy - 14:00h
-
----
-
-# Intruções para entregar seu projeto:
-
-### Antes de começar a desenvolver
-
-1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-013-a-project-frontend-online-store.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-013-a-project-frontend-online-store`
-  * Vá para a branch do seu grupo, com `git checkout main-group-XX && git pull`, onde `XX` é o número do seu grupo. Exemplos: `main-group-1`, `main-group-22`.
-
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
-  * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-
-3. Faça alterações separadas por novas branchs criadas a partir da branch `main-group-XX`, criando uma nova branch para cada demanda
-  * Verifique que você está na branch `main-group-XX`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `main-group-XX`
-    * Exemplo: `git checkout main-group-XX && git pull`
-  * Agora, crie uma branch para a demanda que você vai desenvolver do seu projeto
-    * Você deve criar uma branch com uma breve descrição da demanda a ser desenvolvida
-    * Exemplo: `git checkout -b main-group-XX-cria-campo-de-busca`
-
-4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (devem aparecer listadas as novas alterações em vermelho)
-  * Adicione o arquivo alterado ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (devem aparecer listadas as novas alterações em verde)
-  * Faça seus `commit`
-      * Exemplo:
-        * `git commit -m 'cria componente de busca`
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-5. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin main-group-XX-cria-campo-de-busca`
-
-6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-013-a-project-frontend-online-store/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a branch do grupo, `main-group-XX`, e a sua branch **com atenção**
-  * Coloque um título para a sua _Pull Request_
-    * Exemplo: _"[GRUPO XX] Cria tela de busca"_
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-013-a-project-frontend-online-store/pulls) e confira que o seu _Pull Request_ está criado
-
-7. Assim que aprovado por pelo menos duas pessoas do seu grupo e o _Linter_ estiver adereçado, acesse **SEU** _Pull Request_ e clique no botão _"Merge pull request"_
-
-
-### Durante o desenvolvimento
-
-:warning: **PULL REQUESTS COM ISSUES NO LINTER NÃO SERÃO AVALIADAS, ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** :warning:
-
-* Faça `commits` das alterações que você fizer no código regularmente
-
-* Lembre-se de sempre após um (ou alguns) `commits` atualizar o repositório remoto
-
-* Os comandos que você utilizará com mais frequência são:
-  1. `git status` _(para verificar o que está em vermelho - fora do stage - e o que está em verde - no stage)_
-  2. `git add` _(para adicionar arquivos ao stage do Git)_
-  3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
-  4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-## Como desenvolver
-
-Este repositório **já conta com uma `main-group` para cada grupo**, identificada como `main-group-1` para o grupo 1, `main-group-2` para o grupo 2, e assim por diante. Para desenvolver, você sempre deve:
-
-* **Criar sua branch de desenvolvimento a partir da sua branch main**. Para isso, clone este repositório, faça o `git checkout main-group-XX && git pull` e em seguida o `git checkout -b main-group-XX-minha-feature`.
-* Para criar uma Pull Request para fazer **Code Review**, entitule-a `[GRUPO XX] Meu título` e **sempre aponte a Pull Request da sua branch para a branch `main-group-XX` do seu grupo, como no exemplo abaixo:**
-
-![Exemplo de como apontar uma Pull Request para a branch main do grupo](pull-request-para-branch-do-grupo.png)
-
-* Quando várias pessoas desenvolvem para um mesmo projeto podem ocorrer **conflitos de merge** que precisarão ser resolvidos. Prestem atenção a isso!
-
-⚠ **ATENÇÃO! É POSSÍVEL COMMITAR, POR ENGANO, NA BRANCH DE OUTRO GRUPO, ENTÃO TOME MUITO CUIDADO** ⚠
+- Buscar produtos por termos e categorias a partir da _API do Mercado Livre_;
+- Interagir com os produtos buscados de modo a adicioná-los e removê-los de um carrinho de compras em diferentes quantidades;
+- Visualizar detalhes e avaliações prévias de um produto, bem como criar novas avaliações;
+- E por fim, finalizar a compra (simulada) dos itens selecionados.
 
 ### Execução de testes unitários
 
@@ -197,13 +87,13 @@ Vamos utilizar [React Testing Library](https://testing-library.com/docs/react-te
 Na descrição dos requisitos (logo abaixo) será pedido que seja feita a adição de atributos `data-testid` nos elementos _HTML_. Vamos a um exemplo para deixar evidente essa configuração: se o requisito pedir _"crie um botão e adicione o id de teste (ou `data-testid`) com o valor `my-action`, você pode escrever_:
 
 ```html
-<button data-testid="my-action" ></button>
+<button data-testid="my-action"></button>
 ```
 
 ou
 
 ```html
-<a data-testid="my-action"><a/>
+<a data-testid="my-action"><a /></a>
 ```
 
 Ou seja, o atributo `data-testid="my-action"` servirá para o React Testing Library(RTL) identificar o elemento e, dessa forma, conseguiremos realizar testes unitários focados no comportamento da aplicação. Afim de verificar a solução proposta, você pode executar todos os testes unitários localmente com o comando abaixo:
@@ -220,7 +110,7 @@ npm test src/__tests__/requirement1.test.js
 
 ### Dica: desativando testes
 
-Caso queira avaliar apenas um tópico do requisito, você  pode usar o `.only` após o `it`. Com isso, será possível que apenas esse tópico rode localmente e seja avaliado.
+Caso queira avaliar apenas um tópico do requisito, você pode usar o `.only` após o `it`. Com isso, será possível que apenas esse tópico rode localmente e seja avaliado.
 
 ![image](it-only.png)
 ![image](only-one-green.png)
@@ -288,7 +178,7 @@ npm run lint
 
 Caso ainda fique alguma dúvida, você pode consultar nosso conteúdo sobre [`ESLint`](https://app.betrybe.com/course/real-life-engineer/eslint)
 
- **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
+**PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS. ATENTE-SE PARA RESOLVÊ-LAS ANTES DE FINALIZAR O DESENVOLVIMENTO!** ⚠
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
@@ -324,17 +214,16 @@ Os requisitos são organizados por grupos de prioridade. **Demandas de um grupo 
 - **Requisitos 1 e 2:** Prioridade 0 (Deve ser feito PRIMEIRO)
 - **Requisitos 3 a 5:** Prioridade 1 (Devem ser feitos APÓS OS REQUISITO 1 E 2, mas podem ser feitos em paralelo)
 - **Requisitos 5 a 7:** Prioridade 2 (Devem ser feitos APÓS OS REQUISITO 3 A 5, mas podem ser feitos em paralelo)
-...
+  ...
 
 Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos de merge** e **demandas concorrentes**, onde o avanço de uma depende, necessáriamente, do avanço de outra para poder acontecer.
 
 ### Requisitos Bônus
 
-
 **Saiba priorizar tarefas e priorize o essencial antes de partir para os extras!** Você se deparará com inúmeras situações no trabalho em que precisará priorizar, então este é um exercício muito importante de se praticar.
 
-
 ## Lista de requisitos
+
 ---
 
 #### 1. Implemente o módulo de acesso à api do Mercado Livre
@@ -343,9 +232,8 @@ Se você não seguir a ordem de prioridades terá que lidar com mais **conflitos
 
 **Observações técnicas**
 
-Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação.  Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições. Já deixamos 2 funções a serem implementadas para isso e é **importante utilizar apenas estas 2 funções e mantê-las com esses nomes** para que os testes possam ser validados.
+Você deve (**OBRIGATORIAMENTE**) utilizar o arquivo `src/services/api.js` para acessar a API do Mercado Livre em sua aplicação. Utilize (**OBRIGATORIAMENTE**) o módulo **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)** para realizar as requisições. Já deixamos 2 funções a serem implementadas para isso e é **importante utilizar apenas estas 2 funções e mantê-las com esses nomes** para que os testes possam ser validados.
 **Nota importante:** precisamos lembrar que todos os fetchs ao rodar os testes das chamadas de API serão mockados, portanto se fazer alguma dessas chamadas com um outro fetch dentro da função, isso pode gerar algum problema na validação.
-
 
 ```javascript
 export async function getCategories() {
@@ -360,9 +248,11 @@ export async function getProductsFromCategoryAndQuery(/* categoryId, query */) {
 Essas funções devem realizar uma chamada para a API do Mercado Livre e retornar uma [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) com os dados de resultado. Com essa implementação, o uso dessas funções deve ser algo parecido com o exemplo abaixo:
 
 ```javascript
-import * as api from './services/api'
+import * as api from "./services/api";
 
-api.getCategories().then(categories => { console.log(categories) })
+api.getCategories().then((categories) => {
+  console.log(categories);
+});
 ```
 
 A variável `categories` deve conter o objeto JSON com as categorias obtidas através da chamada da API do Mercado Livre:
@@ -370,21 +260,22 @@ A variável `categories` deve conter o objeto JSON com as categorias obtidas atr
 ```json
 [
   {
-      "id": "MLB5672",
-      "name": "Acessórios para Veículos"
+    "id": "MLB5672",
+    "name": "Acessórios para Veículos"
   },
   {
-      "id": "MLB271599",
-      "name": "Agro"
+    "id": "MLB271599",
+    "name": "Agro"
   },
   {
-      "id": "MLB1403",
-      "name": "Alimentos e Bebidas"
+    "id": "MLB1403",
+    "name": "Alimentos e Bebidas"
   }
 ]
 ```
 
 O que será verificado:
+
 ```
   - Implementa a função `getCategories`.
   - Implementa a função `getProductsFromCategoryAndQuery`.
@@ -400,11 +291,12 @@ O que será verificado:
 
 A tela básica da plataforma é a tela de **listagem de produtos**, onde quem usa buscará o que quer para adicionar ao carrinho e filtrará suas buscas.
 
-  * Esta página deve ficar no path `/`, renderizável a partir do acesso ao componente `<App />`.
-  * Mostre a mensagem `"Digite algum termo de pesquisa ou escolha uma categoria."`.
-  * Adicione o atributo `data-testid` com o valor `home-initial-message` no elemento da mensagem.
+- Esta página deve ficar no path `/`, renderizável a partir do acesso ao componente `<App />`.
+- Mostre a mensagem `"Digite algum termo de pesquisa ou escolha uma categoria."`.
+- Adicione o atributo `data-testid` com o valor `home-initial-message` no elemento da mensagem.
 
 O que será verificado:
+
 ```
   - A raiz da aplicação, em `<App />`, renderiza com sucesso
   - A tela contém a mensagem pedida: 'Digite algum termo de pesquisa ou escolha uma categoria.'
@@ -421,12 +313,13 @@ O que será verificado:
 
 Quem usa o site irá adicionar produtos em seu carrinho de compras e finalizar a compra. A listagem de produtos deve ter um ícone de carrinho que, ao ser clicado, leva à página do carrinho. Inicialmente, o carrinho deverá estar vazio.
 
-  * O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-button` no elemento com o ícone de carrinho de compras. **Atenção!** O **elemento** que faz o direcionamento para a página do carrinho é quem deve conter o `data-testid`. Se você fizer isso com um `<Link />`, por exemplo, é este quem deve conter o `data-testid`.
-  * Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
+- O elemento com o ícone de carrinho de compras deve ficar visível na página inicial (listagem de produtos) e também na página de detalhes de um produto (descrita posteriormente)
+- Adicione o atributo `data-testid` com o valor `shopping-cart-button` no elemento com o ícone de carrinho de compras. **Atenção!** O **elemento** que faz o direcionamento para a página do carrinho é quem deve conter o `data-testid`. Se você fizer isso com um `<Link />`, por exemplo, é este quem deve conter o `data-testid`.
+- Mostre a mensagem `"Seu carrinho está vazio"` na página de carrinho de compras quando não existirem produtos no carrinho de compras.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-empty-message` no elemento da mensagem.
 
 O que será verificado:
+
 ```
   - A home deve ter o botão do carrinho de compras
   - Clicar no botão deve levar à página do carrinho vazio, com a mensagem 'Seu carrinho está vazio' nela
@@ -442,9 +335,10 @@ O que será verificado:
 
 Um endpoint da API do Mercado Livre retorna as categorias de produto disponíveis para busca. Em momento posterior tais categorias serão usadas para filtrar a listagem de produtos. Por hora, elas devem ser listadas na tela da listagem, conforme protótipo.
 
-  * Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
+- Adicione o atributo `data-testid` com o valor `category` nos elementos que possuem os nomes das categorias
 
 O que será verificado:
+
 ```
   - Exibe as categorias retornadas pela API na página de listagem de produtos
 ```
@@ -460,26 +354,28 @@ O que será verificado:
 
 A alma do site é a sua lógica de busca e listagem de produtos. Após digitar seus termos na caixa de busca uma requisição deverá ser feita à API do Mercado Livre utilizando a ação de um botão, tendo como parâmetros a frase digitada, e tais produtos deverão aparecer na tela numa exibição resumida, conforme protótipo anexo.
 
-  * Adicione o atributo `data-testid` com o valor `query-input` no elemento `input` que servirá para a pessoa que usa sua aplicação digitar o termo de busca.
-  * Adicione o atributo `data-testid` com o valor `query-button` no elemento que dispara a chamada para a API com o termo de busca pesquisado.
-  * Adicione o atributo `data-testid` com o valor `product` nos elementos que possuem os dados dos produtos.
+- Adicione o atributo `data-testid` com o valor `query-input` no elemento `input` que servirá para a pessoa que usa sua aplicação digitar o termo de busca.
+- Adicione o atributo `data-testid` com o valor `query-button` no elemento que dispara a chamada para a API com o termo de busca pesquisado.
+- Adicione o atributo `data-testid` com o valor `product` nos elementos que possuem os dados dos produtos.
 
 Obs: é importante ressaltar a necessicadade de utilizar a função `getProductsFromCategoryAndQuery`, que é mencionada no requisito 1 para a validação dos testes.
 
 O que será verificado:
+
 ```
   - Exibe todos os produtos retornados pela API, dado um determinado filtro
 ```
 
 #### 6. Selecione uma categoria e mostre somente os produtos daquela categoria
 
-**PRIORIDADE 2** - Como pessoa usuária, eu quero clicar em uma categoria e ver a listagem de produtos ser filtrada de  acordo com os produtos daquela categoria.
+**PRIORIDADE 2** - Como pessoa usuária, eu quero clicar em uma categoria e ver a listagem de produtos ser filtrada de acordo com os produtos daquela categoria.
 
 O que será verificado:
 
 - A página, agora, deve poder usar as categorias recuperadas da API para filtrar os produtos buscados. Os termos e as categorias inseridas por quem usa devem ser usados em conjunto para filtragens mais específicas.
 
 O que será verificado:
+
 ```
   - Filtra corretamente os produtos de uma página para exibir somente os daquela categoria
 ```
@@ -494,12 +390,13 @@ PRIORIDADE 3 - Como pessoa usuária, eu quero clicar no card do produto e visual
 
 A exibição detalhada de um produto será a página para exibir tudo o que se tem acerca de um produto específico.
 
-  * Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
-  * Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
+- Adicione o atributo `data-testid` com o valor `product-detail-link` no elemento que ao ser clicado, enviará a pessoa que usa a aplicação para a página de detalhes do produto. Você deve adicionar esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `product-detail-name` no elemento que possui o nome do produto na tela de detalhes.
 
 Obs: é importante ressaltar a necessicadade de utilizar a função `getProductsFromCategoryAndQuery`, que é mencionada no requisito 1 para a validação dos testes.
 
 O que será verificado:
+
 ```
   - Clicar no card do produto leva à página com seus detalhes
 ```
@@ -512,12 +409,13 @@ O que será verificado:
 
 Configure uma forma de adicionar produtos ao carrinho de compras a partir da tela de listagem de produtos.
 
-  * Adicione o atributo `data-testid` com o valor `product-add-to-cart` nos elementos que executam a ação de adicionar os produtos ao carrinho de compras.
-  * Desenvolva algo da forma simples: um elemento adiciona um produto.
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `product-add-to-cart` nos elementos que executam a ação de adicionar os produtos ao carrinho de compras.
+- Desenvolva algo da forma simples: um elemento adiciona um produto.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
 
 O que será verificado:
+
 ```
   - Adiciona da tela de listagem um produto que aparece no carrinho
 ```
@@ -532,18 +430,19 @@ O que será verificado:
 
 Poder adicionar produtos ao carrinho a partir de sua tela de exibição detalhada será um canal importante de conversões de venda.
 
-  * Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `product-detail-add-to-cart` no elemento que possui a ação de adicionar o produto ao carrinho de compras.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-product-name` no elemento que possui o nome do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-product-quantity` no elemento que possui a quantidade do produto na tela do carrinho de compras. Você deve adicionar esse atributo para todos os produtos.
 
 Obs: o teste deste requisito utiliza `data-testids` que são desenvolvidos em outros requisitos:
 
-  * `data-testid="category"` pedido no requisito 4.
-  * `data-testid="product-detail-link"` pedido no requisito 7.
-  * `data-testid="product-detail-name"` pedido no requisito 7.
-  * `data-testid="shopping-cart-button"` pedido no requisito 3.
+- `data-testid="category"` pedido no requisito 4.
+- `data-testid="product-detail-link"` pedido no requisito 7.
+- `data-testid="product-detail-name"` pedido no requisito 7.
+- `data-testid="shopping-cart-button"` pedido no requisito 3.
 
 O que será verificado:
+
 ```
   - Adiciona um produto ao carrinho da sua tela de detalhes
 ```
@@ -558,11 +457,12 @@ O que será verificado:
 
 São operações básicas de carrinho a alteração da quantidade de um determinado produto nele e a visualização de tudo o que foi adicionado, com a soma dos valores.
 
-  * Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
-  * Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
-  * Adicione o atributo `data-testid` com o valor `product-decrease-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
+- Adicione elementos na página do carrinho de compras para aumentar ou diminuir a quantidade de cada produto presente no carrinho.
+- Adicione o atributo `data-testid` com o valor `product-increase-quantity` no elemento que aumenta a quantidade de um produto. Adicione esse atributo para todos os produtos.
+- Adicione o atributo `data-testid` com o valor `product-decrease-quantity` no elemento que diminui a quantidade de um produto. Adicione esse atributo para todos os produtos.
 
 O que será verificado:
+
 ```
   - Adiciona produtos ao carrinho e manipula suas quantidades
 ```
@@ -578,10 +478,11 @@ O que será verificado:
 
 Avaliações positivas de um produto contribuem para boas vendas e nos dão insumos para, no tempo, destacarmos os produtos melhores e fazermos anúncios direcionados. Produtos ruins, de forma análoga, podem eventualmente ser penalizados por avaliações ruins.
 
-  * Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
-  * Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
+- Adicione um campo de texto para que a pessoa que utiliza a aplicação possa escrever algo sobre o produto.
+- Adicione o atributo `data-testid` com o valor `product-detail-evaluation` no campo de texto.
 
 O que será verificado:
+
 ```
   - Avalia um produto na sua tela de detalhes
 ```
@@ -596,19 +497,20 @@ O que será verificado:
 
 O último grande passo do fluxo do e-commerce é a finalização da compra por parte de quem usa.
 
-  * Adicione um botão para finalizar a compra. Este botão ao ser clicado, deve enviar os dados referente à lista para uma página de "_checkout_".
-  * Adicione o atributo `data-testid` com o valor `checkout-products` no botão que leva a pessoa à página de "_checkout_".
-  * A página de "_checkout_" deve apresentar a listagem dos produtos e o valor total da compra.
-  * A página de "_checkout_" também deve possuir elementos para que a pessoa insira os dados e finalize a compra.
-  * Elemento "Nome completo" deve possuir o atributo `data-testid` com o valor `checkout-fullname`.
-  * Elemento "Email" deve possuir o atributo `data-testid` com o valor `checkout-email`.
-  * Elemento "CPF" deve possuir o atributo `data-testid` com o valor `checkout-cpf`.
-  * Elemento "Telefone" deve possuir o atributo `data-testid` com o valor `checkout-phone`.
-  * Elemento "CEP" deve possuir o atributo `data-testid` com o valor `checkout-cep`.
-  * Elemento "Endereço" deve possuir o atributo `data-testid` com o valor `checkout-address`.
-  * (**Não avaliativo**) Você pode criar um botão que simule a compra desses produtos, na verdade, esse botão não precisa realizar nenhuma função específica.
+- Adicione um botão para finalizar a compra. Este botão ao ser clicado, deve enviar os dados referente à lista para uma página de "_checkout_".
+- Adicione o atributo `data-testid` com o valor `checkout-products` no botão que leva a pessoa à página de "_checkout_".
+- A página de "_checkout_" deve apresentar a listagem dos produtos e o valor total da compra.
+- A página de "_checkout_" também deve possuir elementos para que a pessoa insira os dados e finalize a compra.
+- Elemento "Nome completo" deve possuir o atributo `data-testid` com o valor `checkout-fullname`.
+- Elemento "Email" deve possuir o atributo `data-testid` com o valor `checkout-email`.
+- Elemento "CPF" deve possuir o atributo `data-testid` com o valor `checkout-cpf`.
+- Elemento "Telefone" deve possuir o atributo `data-testid` com o valor `checkout-phone`.
+- Elemento "CEP" deve possuir o atributo `data-testid` com o valor `checkout-cep`.
+- Elemento "Endereço" deve possuir o atributo `data-testid` com o valor `checkout-address`.
+- (**Não avaliativo**) Você pode criar um botão que simule a compra desses produtos, na verdade, esse botão não precisa realizar nenhuma função específica.
 
 O que será verificado:
+
 ```
   - Faz os passos da compra com sucesso: recupera produtos de uma categoria; adiciona-os ao carrinho; faz o checkout; insere todos os dados
 ```
@@ -625,13 +527,14 @@ O que será verificado:
 
 A partir de uma pesquisa com usuários e concorrentes, identificamos que existe a necessidade de uma visualização da quantidade de produtos do carrinho de uma forma dinâmica e acessível.
 
-  * Adicione o atributo `data-testid` com o valor `shopping-cart-size` no elemento que contém a quantidade de produtos presente na lista.
-  * A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes na tela de listagem e o produto2 2 vezes na tela de detalhes, o valor a ser exibido no carrinho é 7.
-  * Esse elemento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
+- Adicione o atributo `data-testid` com o valor `shopping-cart-size` no elemento que contém a quantidade de produtos presente na lista.
+- A quantidade a ser exibida é o número total de itens, ou seja, se a pessoa adiciona o produto1 5 vezes na tela de listagem e o produto2 2 vezes na tela de detalhes, o valor a ser exibido no carrinho é 7.
+- Esse elemento deve ser visível da página de listagem de produtos e da página de detalhes de produto.
 
 Obs: é importante ressaltar a necessicadade de utilizar a função `getProductsFromCategoryAndQuery`, que é mencionada no requisito 1 para a validação dos testes.
 
 O que será verificado:
+
 ```
   - Vê a quantidade de produtos no carrinho da tela de listagem
   - Vê a quantidade de produtos no carrinho da tela de detalhes
@@ -647,6 +550,7 @@ O que será verificado:
 Produtos tem disponibilidades limitadas. É uma péssima experiência de uso adicionar ao carrinho produtos que, no fim do processo, não se pode comprar.
 
 O que será verificado:
+
 ```
   - Não adiciona ao carrinho mais produtos do que o disponível em estoque
 ```
@@ -662,10 +566,11 @@ O que será verificado:
 
 As pessoas que vendem no Mercado Livre disponibilizam frete grátis a alguns produtos. Devemos incorporar isso ao e-commerce.
 
-  * Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
-  * Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
+- Adicione um elemento que mostre essa informação para cada produto que possua frete grátis na tela de listagem.
+- Adicione o atributo `data-testid` com o valor `free-shipping` em elementos que apresentem essa informação para todos os produtos que possuam frete grátis.
 
 O que será verificado:
+
 ```
   - Exibe corretamente a informação de frete grátis dos produtos
 ```
@@ -708,39 +613,3 @@ O que será verificado:
 **PRIORIDADE 5** - Da tela de detalhamento de produto, permitir alterar a quantidade daquele produto no carrinho, se ele estiver lá, com botões (-) e (+). A quantidade não pode ser negativa (veja detalhes no card).
 
 - [Tela - Detalhamento do produto com quantidade.png](https://github.com/tryber/sd-013-a-project-frontend-online-store/tree/master/wireframes/card_09.png)
-
----
-
-### Depois de terminar o desenvolvimento (opcional)
-
-Para **"entregar"** seu projeto, siga os passos a seguir:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
-
-Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
-⚠ Lembre-se que garantir que todas as _issues_ comentadas pelo CodeClimate estão resolvidas! ⚠
-
----
-
-### Revisando um pull request
-
-⚠⚠⚠
-
-À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
-
-Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
-
----
-
-
-# Avisos finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://bit.ly/2OfLJPn)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
